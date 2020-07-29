@@ -1,4 +1,11 @@
-export default (state, action) => {
+import { TransactionType } from "../types/exTrackerTypes";
+// import { Actions } from "../types/exTrackerTypes";
+
+type Actions =
+  | { type: "Delete_Transaction"; payload: number }
+  | { type: "Add_Transaction"; payload: TransactionType };
+
+export default (state: { Transaction: TransactionType[] }, action: Actions) => {
   switch (action.type) {
     case "Delete_Transaction":
       return {

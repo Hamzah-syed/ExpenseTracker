@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { TransactionContext } from "../context/TransactionContext";
 
 const Balance = () => {
-  const { transaction } = useContext(TransactionContext);
+  const { Transaction } = useContext(TransactionContext);
 
-  const allAmounts = transaction.map((allAmount) => allAmount.amount);
+  const allAmounts = Transaction.map((allAmount) => allAmount.amount);
   const total = allAmounts.reduce((a, b) => (a += b), 0).toFixed(2);
 
   return (

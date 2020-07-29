@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { TransactionContext } from "../context/TransactionContext";
+// type
+import { TransactionPropType } from "../types/exTrackerTypes";
 
-const Transaction = ({ trans }) => {
+const TransactionDel: React.FC<TransactionPropType> = ({ trans }) => {
   // calling context
 
   const { deleteTransaction } = useContext(TransactionContext);
@@ -10,7 +12,7 @@ const Transaction = ({ trans }) => {
     <div className="flex ">
       <button
         onClick={() => deleteTransaction(trans.id)}
-        className="bg-red-600 text-white px-4 relative my-1 "
+        className="bg-red-600 text-white px-4 relative my-1 focus:outline-none"
       >
         {" "}
         X{" "}
@@ -32,4 +34,4 @@ const Transaction = ({ trans }) => {
   );
 };
 
-export default Transaction;
+export default TransactionDel;
